@@ -13,11 +13,33 @@
             <figure class="logo">
                 <img src="./img/logo.png" alt="Spotify" />
             </figure>
+            <div class="selection-wrapper">
+                <!-- SELECTION AUTORE -->
+                <select v-model="authorSelect" name="author" id="select-author">
+                    <option value="">tutti</option>
+                  <option
+                    v-for="author in arrAuthor"
+                    :value="author"
+                  >
+                    {{ author }}
+                  </option>
+                </select>
+                <!-- SELECTION GENERE -->
+                <select v-model="genreSelect" name="genre" id="select-genre">
+                    <option value="">tutti</option>
+                  <option
+                    v-for="genre in arrGenere"
+                    :value="genre"
+                  >
+                    {{ genre }}
+                  </option>
+                </select>
+              </div>
         </header>
         <!-- <?php include __DIR__ . '/parts/main.php';?> -->
         <main>
             <div class="container">
-                <div v-for="album in arrAlbum" class="card">
+                <div v-for="album in filterArray" class="card">
                     <figure class="card-image">
                         <img :src="album.poster" alt="album.title" />
                     </figure>
