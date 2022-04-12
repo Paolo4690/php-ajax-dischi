@@ -72,5 +72,5 @@
         ]
     ];
 
-    // header('Content-Type: application/json');
-    // echo json_encode($arrdischi);
+    header('Content-Type: application/json');
+    echo json_encode($arrdischi);
