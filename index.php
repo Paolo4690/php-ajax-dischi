@@ -1,6 +1,3 @@
-<?php 
-    include_once './db/data.php';
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,9 +8,13 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div id="app"><?php
-    include __DIR__ . '/parts/header.php';
-    include __DIR__ . '/parts/main.php';?>
+    <div id="app">
+        <header>
+            <figure class="logo">
+                <img src="./img/logo.png" alt="Spotify" />
+            </figure>
+        </header>
+        <?php include __DIR__ . '/parts/main.php';?>
     </div> 
     
 </body>

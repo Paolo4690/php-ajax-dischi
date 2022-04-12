@@ -1,3 +1,6 @@
+<?php 
+    include_once './db/data.php';
+?>
 <main>
     <div class="container">
 
