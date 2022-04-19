@@ -66,11 +66,24 @@
         [
         "poster" => "https://m.media-amazon.com/images/I/71K9CbNZPsL._SS500_.jpg",
         "title" => "Bad",
-        "author" => "Michael Jacjson",
+        "author" => "Michael Jackson",
         "genre" => "Pop",
         "year" => "1987"
         ]
     ];
+    
+    $genre = strtolower($_GET["genre"] ?? '');
+    
+    if ($genre) {
+        $arr_result = [];
+        foreach($arrdischi as $disco) {
+            if(strtolower($disco["genre"]) == $genre){
+                $arr_result[] = $disco;
+            }
+        }
+    } else {
+        $arr_result = $arrdischi;
+    }
 
     header('Content-Type: application/json');
-    echo json_encode($arrdischi);
+    echo json_encode($arr_result);
